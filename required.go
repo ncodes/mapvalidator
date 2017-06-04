@@ -12,6 +12,9 @@ func Required(targetField string) Rule {
 // RequiredWithMsg creates a new rule that requires a field with a custom error message
 func RequiredWithMsg(targetField, msg string) Rule {
 	return NewRuleMaker(targetField, msg, msg, func(r *RuleMaker, fieldName string, fieldValue interface{}, fullMap map[string]interface{}) (errs []error) {
+
+		r.TargetRequired = true
+
 		switch _value := fieldValue.(type) {
 		case string:
 			if len(_value) == 0 {

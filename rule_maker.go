@@ -10,6 +10,7 @@ type RuleMaker struct {
 	Message                string
 	TargetMustExistMessage string
 	CheckFunc              RuleMakerCheckFunc
+	TargetRequired         bool
 }
 
 // NewRuleMaker creates a new required rule
@@ -29,7 +30,7 @@ func (r *RuleMaker) GetTargetField() string {
 
 // TargetMustExist forces an error to returned if target field does not exist in map
 func (r *RuleMaker) TargetMustExist() bool {
-	return true
+	return r.TargetRequired
 }
 
 // GetTargetMustExistMessage returns the error message to return when target field does not exists in map
