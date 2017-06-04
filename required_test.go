@@ -95,7 +95,10 @@ func TestRequiredWithMsg(t *testing.T) {
 	errs = Validate(m, rules...)
 	Contains(t, errs, fmt.Errorf("name is required"))
 
-	m = map[string]interface{}{}
+	m = map[string]interface{}{
+		"others": "others",
+	}
 	errs = Validate(m, rules...)
 	Contains(t, errs, fmt.Errorf("name is required"))
+
 }

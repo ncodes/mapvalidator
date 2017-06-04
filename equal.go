@@ -6,7 +6,7 @@ import "fmt"
 // If the value type is not a string, error message is returned
 func EqualStringWithMsg(targetField string, cmpVal string, msg string) Rule {
 	missingFieldMsg := fmt.Sprintf(`field '%s' is required`, targetField)
-	return NewRuleMaker(targetField, msg, missingFieldMsg, func(r *RuleMaker, fieldName string, fieldValue interface{}, fullMap map[string]interface{}) (errs []error) {
+	return NewRuleMaker(targetField, false, msg, missingFieldMsg, func(r *RuleMaker, fieldName string, fieldValue interface{}, fullMap map[string]interface{}) (errs []error) {
 		if v, ok := fieldValue.(string); ok {
 			if v != cmpVal {
 				errs = append(errs, fmt.Errorf(msg))
@@ -22,7 +22,7 @@ func EqualStringWithMsg(targetField string, cmpVal string, msg string) Rule {
 // If the value type is not a int, error message is returned
 func EqualIntWithMsg(targetField string, cmpVal int, msg string) Rule {
 	missingFieldMsg := fmt.Sprintf(`field '%s' is required`, targetField)
-	return NewRuleMaker(targetField, msg, missingFieldMsg, func(r *RuleMaker, fieldName string, fieldValue interface{}, fullMap map[string]interface{}) (errs []error) {
+	return NewRuleMaker(targetField, false, msg, missingFieldMsg, func(r *RuleMaker, fieldName string, fieldValue interface{}, fullMap map[string]interface{}) (errs []error) {
 		if v, ok := fieldValue.(int); ok {
 			if v != cmpVal {
 				errs = append(errs, fmt.Errorf(msg))
@@ -38,7 +38,7 @@ func EqualIntWithMsg(targetField string, cmpVal int, msg string) Rule {
 // If the value type is not a int32, error message is returned
 func EqualInt32WithMsg(targetField string, cmpVal int32, msg string) Rule {
 	missingFieldMsg := fmt.Sprintf(`field '%s' is required`, targetField)
-	return NewRuleMaker(targetField, msg, missingFieldMsg, func(r *RuleMaker, fieldName string, fieldValue interface{}, fullMap map[string]interface{}) (errs []error) {
+	return NewRuleMaker(targetField, false, msg, missingFieldMsg, func(r *RuleMaker, fieldName string, fieldValue interface{}, fullMap map[string]interface{}) (errs []error) {
 		if v, ok := fieldValue.(int32); ok {
 			if v != cmpVal {
 				errs = append(errs, fmt.Errorf(msg))
@@ -54,7 +54,7 @@ func EqualInt32WithMsg(targetField string, cmpVal int32, msg string) Rule {
 // If the value type is not a int64, error message is returned
 func EqualInt64WithMsg(targetField string, cmpVal int64, msg string) Rule {
 	missingFieldMsg := fmt.Sprintf(`field '%s' is required`, targetField)
-	return NewRuleMaker(targetField, msg, missingFieldMsg, func(r *RuleMaker, fieldName string, fieldValue interface{}, fullMap map[string]interface{}) (errs []error) {
+	return NewRuleMaker(targetField, false, msg, missingFieldMsg, func(r *RuleMaker, fieldName string, fieldValue interface{}, fullMap map[string]interface{}) (errs []error) {
 		if v, ok := fieldValue.(int64); ok {
 			if v != cmpVal {
 				errs = append(errs, fmt.Errorf(msg))
@@ -70,7 +70,7 @@ func EqualInt64WithMsg(targetField string, cmpVal int64, msg string) Rule {
 // If the value type is not a float32, error message is returned
 func EqualFloat32WithMsg(targetField string, cmpVal float32, msg string) Rule {
 	missingFieldMsg := fmt.Sprintf(`field '%s' is required`, targetField)
-	return NewRuleMaker(targetField, msg, missingFieldMsg, func(r *RuleMaker, fieldName string, fieldValue interface{}, fullMap map[string]interface{}) (errs []error) {
+	return NewRuleMaker(targetField, false, msg, missingFieldMsg, func(r *RuleMaker, fieldName string, fieldValue interface{}, fullMap map[string]interface{}) (errs []error) {
 		if v, ok := fieldValue.(float32); ok {
 			if v != cmpVal {
 				errs = append(errs, fmt.Errorf(msg))
@@ -86,7 +86,7 @@ func EqualFloat32WithMsg(targetField string, cmpVal float32, msg string) Rule {
 // If the value type is not a float32, error message is returned
 func EqualFloat64WithMsg(targetField string, cmpVal float64, msg string) Rule {
 	missingFieldMsg := fmt.Sprintf(`field '%s' is required`, targetField)
-	return NewRuleMaker(targetField, msg, missingFieldMsg, func(r *RuleMaker, fieldName string, fieldValue interface{}, fullMap map[string]interface{}) (errs []error) {
+	return NewRuleMaker(targetField, false, msg, missingFieldMsg, func(r *RuleMaker, fieldName string, fieldValue interface{}, fullMap map[string]interface{}) (errs []error) {
 		if v, ok := fieldValue.(float64); ok {
 			if v != cmpVal {
 				errs = append(errs, fmt.Errorf(msg))

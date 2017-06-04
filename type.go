@@ -48,7 +48,7 @@ func TypeMap(val interface{}) bool {
 // has a specific type
 func TypeWithMsg(targetField string, typeChecker TypeChecker, msg string) Rule {
 	missingFieldMsg := fmt.Sprintf(`field '%s' is required`, targetField)
-	return NewRuleMaker(targetField, msg, missingFieldMsg, func(r *RuleMaker, fieldName string, fieldValue interface{}, fullMap map[string]interface{}) (errs []error) {
+	return NewRuleMaker(targetField, false, msg, missingFieldMsg, func(r *RuleMaker, fieldName string, fieldValue interface{}, fullMap map[string]interface{}) (errs []error) {
 		if typeChecker != nil {
 			if !typeChecker(fieldValue) {
 				errs = append(errs, fmt.Errorf(msg))
