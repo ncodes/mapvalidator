@@ -23,6 +23,13 @@ errs := Validate(m, rules...)
 
 - RequiredWithMsg(fieldName, errorMsg)
 - TypeWithMsg(fieldName, TypeChecker, message)
+- EqualStringWithMsg(targetField, cmpVal, msg)
+- EqualIntWithMsg(targetField, cmpVal, msg)
+- EqualInt32WithMsg(targetField, cmpVal, msg)
+- EqualInt64WithMsg(targetField, cmpVal, msg)
+- EqualFloat32WithMsg(targetField, cmpVal, msg)
+- EqualFloat64WithMsg(targetField, cmpVal, msg)
+- Custom(targetField, msg, customFunc func(fieldValue interface{}, fullMap map[string]interface{}) bool)
 
 ## Supported TypeCheckers
 
