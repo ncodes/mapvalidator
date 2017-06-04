@@ -1,0 +1,19 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "841BSo//Sr+IGv7vbsRTlC2ai0A=",
+			"path": "github.com/asaskevich/govalidator",
+			"revision": "df81827fdd59d8b4fb93d8910b286ab7a3919520",
+			"revisionTime": "2016-05-19T10:40:38Z"
+		},
+		{
+			"checksumSHA1": "CnQ75SXJeL0qu7e9BA7n5G+MfDA=",
+			"path": "github.com/stretchr/testify/assert",
+			"revision": "e22aedd37671fb115be6c0c25129c405cb575cfd",
+			"revisionTime": "2015-04-20T10:19:11Z"
+		}
+	],
+	"rootPath": "github.com/ncodes/mapvalidator"
+}
